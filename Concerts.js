@@ -24,7 +24,7 @@ db.connect(err => {
 
 // 콘서트 정보 가져오기
 app.get('/Concerts', (req, res) => {
-  const query = 'SELECT image_url, start_date, end_date FROM concerts';
+  const query = 'SELECT image_url, start_date, end_date FROM Concerts';
   db.query(query, (err, results) => {
     if (err) {
       return res.status(500).json({ error: err });
