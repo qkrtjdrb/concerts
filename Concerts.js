@@ -3,7 +3,14 @@ const mysql = require('mysql');
 const cors = require('cors');
 
 const app = express();
-app.use(cors()); // CORS 설정
+
+const corsOptions = {
+  origin: ['http://10.0.3.92:3000', 'http://another-allowed-domain.com'], // 여러 도메인 허용
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions)); // CORS 설정
 app.use(express.json());
 
 // MySQL 연결 설정
