@@ -5,8 +5,11 @@ const cors = require('cors');
 const app = express();
 
 
-const cors = require('cors');
-app.use(cors());
+const corsOptions = {
+  origin: ['http://10.0.3.92:3000', 'http://another-allowed-domain.com'], // 여러 도메인 허용
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+};
 
 app.use(cors(corsOptions)); // CORS 설정
 app.use(express.json());
