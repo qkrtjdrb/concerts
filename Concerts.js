@@ -4,9 +4,7 @@ const cors = require('cors');
 
 const app = express();
 
-
-const cors = require('cors'); // CORS 설정
-app.use(cors());
+app.use(cors()); // CORS 설정
 app.use(express.json());
 
 // MySQL 연결 설정
